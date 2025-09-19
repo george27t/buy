@@ -39,7 +39,7 @@
     "id": 7,
     "name": "טורטיט",
     "category": "חטיף",
-    "image": "https://res.cloudinary.com/demo/image/upload/tortit.png"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%98%D7%95%D7%A8%D7%98%D7%99%D7%AA_i6z1xh.png"
   },
   {
     "id": 8,
@@ -49,14 +49,68 @@
   },
   {
     "id": 9,
-    "name": "קליק",
+    "name": "סניקרס",
     "category": "חטיף",
-    "image": "https://res.cloudinary.com/demo/image/upload/klik.png"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278259/barcodes/%D7%A1%D7%A0%D7%99%D7%A7%D7%A8%D7%A1_ryg5tc.png"
   },
   {
     "id": 10,
     "name": "פיוז טי",
     "category": "שתיה",
     "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278260/barcodes/%D7%A4%D7%99%D7%95%D7%96_%D7%98%D7%99_xhiglq.png"
+  },
+  {
+    "id": 11,
+    "name": "קינדר אצבעות",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278259/barcodes/%D7%A7%D7%99%D7%A0%D7%93%D7%A8_%D7%90%D7%A6%D7%91%D7%A2%D7%95%D7%AA_wsevxt.png"
+  },
+  {
+    "id": 12,
+    "name": "מנגו פחית",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278260/barcodes/%D7%A4%D7%97%D7%99%D7%AA_%D7%A1%D7%A4%D7%A8%D7%99%D7%A0%D7%92_%D7%9E%D7%A0%D7%92%D7%95_sikqm7.png"
+  },
+  {
+    "id": 13,
+    "name": "מים בטעם תפוח",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278259/barcodes/%D7%9E%D7%99%D7%9D_%D7%91%D7%98%D7%A2%D7%9D_%D7%AA%D7%A4%D7%95%D7%97_gpcjfd.png"
+  },
+  {
+    "id": 14,
+    "name": "תות בננה פחית",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278259/barcodes/%D7%9E%D7%99%D7%9D_%D7%91%D7%98%D7%A2%D7%9D_%D7%AA%D7%A4%D7%95%D7%97_gpcjfd.png"
+  },
+  {
+    "id": 15,
+    "name": "מים בטעם אפרסק",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%9E%D7%99%D7%9D_%D7%91%D7%98%D7%A2%D7%9D_%D7%90%D7%A4%D7%A8%D7%A1%D7%A7_axzdqs.png"
+  },
+  {
+    "id": 16,
+    "name": "מארס",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%9E%D7%90%D7%A8%D7%A1_zrs3hp.png"
+  },
+  {
+    "id": 17,
+    "name": "טוויקס",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%98%D7%95%D7%95%D7%99%D7%A7%D7%A1_fmczhc.png"
+  },
+  {
+    "id": 18,
+    "name": "טעמי",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%98%D7%A2%D7%9E%D7%99_pubp6w.png"
+  },
+  {
+    "id": 19,
+    "name": "באונטי",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%91%D7%90%D7%95%D7%A0%D7%98%D7%99_afrcpa.png"
   }
 ]
