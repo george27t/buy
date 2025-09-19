@@ -1,21 +1,21 @@
 [
   {
     "id": 1,
-    "name": "במבה",
+    "name": "במבה מארז 40 גרם",
     "category": "חטיף",
-    "image": "https://res.cloudinary.com/demo/image/upload/bamba.png"
+    "image": "https://asset.cloudinary.com/dlhfcdscf/a5e62844aba45ba7f70e213b5a9ff997"
   },
   {
     "id": 2,
-    "name": "קולה",
+    "name": "קוקה קולה",
     "category": "שתיה",
-    "image": "https://res.cloudinary.com/demo/image/upload/cola.png"
+    "image": "https://asset.cloudinary.com/dlhfcdscf/96308f89fc8df4f31dd2e9d361e13019"
   },
   {
     "id": 3,
-    "name": "ביסלי",
-    "category": "חטיף",
-    "image": "https://res.cloudinary.com/demo/image/upload/bisli.png"
+    "name": "זירו קולה",
+    "category": "שתיה",
+    "image": "https://asset.cloudinary.com/dlhfcdscf/c848c5ced1eae52ae12923fc542b5bac"
   },
   {
     "id": 4,
