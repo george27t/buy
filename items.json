@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "במבה",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/demo/image/upload/bamba.png"
+  },
+  {
+    "id": 2,
+    "name": "קולה",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/demo/image/upload/cola.png"
+  },
+  {
+    "id": 3,
+    "name": "ביסלי",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/demo/image/upload/bisli.png"
+  },
+  {
+    "id": 4,
+    "name": "ספרייט",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/demo/image/upload/sprite.png"
+  },
+  {
+    "id": 5,
+    "name": "דובונים",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/demo/image/upload/bears.png"
+  },
+  {
+    "id": 6,
+    "name": "פנטה",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/demo/image/upload/fanta.png"
+  },
+  {
+    "id": 7,
+    "name": "טורטיט",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/demo/image/upload/tortit.png"
+  },
+  {
+    "id": 8,
+    "name": "מים מינרלים",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/demo/image/upload/water.png"
+  },
+  {
+    "id": 9,
+    "name": "קליק",
+    "category": "חטיף",
+    "image": "https://res.cloudinary.com/demo/image/upload/klik.png"
+  },
+  {
+    "id": 10,
+    "name": "מיץ תפוזים",
+    "category": "שתיה",
+    "image": "https://res.cloudinary.com/demo/image/upload/orange_juice.png"
+  }
+]
