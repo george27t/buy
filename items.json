@@ -19,15 +19,15 @@
   },
   {
     "id": 4,
-    "name": "ספרייט",
-    "category": "שתיה",
-    "image": "https://res.cloudinary.com/demo/image/upload/sprite.png"
+    "name": "אגוזי",
+    "category": "חטיף",
+    "image": "https://asset.cloudinary.com/dlhfcdscf/a5e62844aba45ba7f70e213b5a9ff997"
   },
   {
     "id": 5,
-    "name": "דובונים",
-    "category": "חטיף",
-    "image": "https://res.cloudinary.com/demo/image/upload/bears.png"
+    "name": "אקסל",
+    "category": "שתיה",
+    "image": "https://asset.cloudinary.com/dlhfcdscf/f958774389ea004c9d0af994bd509cd5"
   },
   {
     "id": 6,
