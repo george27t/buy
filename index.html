@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קניות סיטונאיות</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .search-container {
+            padding: 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        .filters {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: #2196F3;
+            color: white;
+            border-color: #2196F3;
+        }
+
+        .items-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-category {
+            font-size: 14px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .item-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .checkout-btn {
+            margin: 20px;
+            padding: 15px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: calc(100% - 40px);
+            transition: transform 0.2s;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .selected-count {
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .no-items {
+            text-align: center;
+            color: #666;
+            padding: 40px 20px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>קניות סיטונאיות</h1>
+            <p>בחר פריטים לקנייה</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="חפש פריט..." id="searchInput">
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-category="all" id="allBtn">הכל</button>
+            <button class="filter-btn" data-category="שתיה" id="drinkBtn">שתיה</button>
+            <button class="filter-btn" data-category="חטיף" id="snackBtn">חטיף</button>
+        </div>
+
+        <div class="items-container" id="itemsContainer">
+            <div class="loading">טוען פריטים...</div>
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn" disabled>
+            המשך לקופה
+            <span class="selected-count" id="selectedCount" style="display: none;">0</span>
+        </button>
+    </div>
+
+    <script>
+        let allItems = [];
+        let selectedItems = JSON.parse(localStorage.getItem('selectedItems') || '[]');
+        let currentFilter = 'all';
+
+        // טעינת הפריטים מה-JSON
+        async function loadItems() {
+            try {
+                const response = await fetch('items.json');
+                allItems = await response.json();
+                
+                // מיון לפי שם (מא' עד ת')
+                allItems.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+                
+                displayItems();
+            } catch (error) {
+                document.getElementById('itemsContainer').innerHTML = 
+                    '<div class="no-items">שגיאה בטעינת הפריטים</div>';
+            }
+        }
+
+        // הצגת הפריטים
+        function displayItems() {
+            const container = document.getElementById('itemsContainer');
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filteredItems = allItems;
+            
+            // סינון לפי קטגוריה
+            if (currentFilter !== 'all') {
+                filteredItems = filteredItems.filter(item => item.category === currentFilter);
+            }
+            
+            // סינון לפי חיפוש
+            if (searchTerm) {
+                filteredItems = filteredItems.filter(item => 
+                    item.name.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            if (filteredItems.length === 0) {
+                container.innerHTML = '<div class="no-items">לא נמצאו פריטים</div>';
+                return;
+            }
+
+            container.innerHTML = filteredItems.map(item => `
+                <div class="item">
+                    <div class="item-info">
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-category">${item.category}</div>
+                    </div>
+                    <input type="checkbox" class="item-checkbox" 
+                           data-item-id="${item.id}" 
+                           ${selectedItems.find(selected => selected.id === item.id) ? 'checked' : ''}>
+                </div>
+            `).join('');
+
+            // הוספת event listeners לcheckboxes
+            document.querySelectorAll('.item-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', handleItemSelection);
+            });
+        }
+
+        // טיפול בבחירת פריט
+        function handleItemSelection(event) {
+            const itemId = parseInt(event.target.dataset.itemId);
+            const item = allItems.find(item => item.id === itemId);
+            
+            if (event.target.checked) {
+                // הוספת פריט לרשימה
+                if (!selectedItems.find(selected => selected.id === itemId)) {
+                    selectedItems.push(item);
+                }
+            } else {
+                // הסרת פריט מהרשימה
+                selectedItems = selectedItems.filter(selected => selected.id !== itemId);
+            }
+            
+            // שמירה ב-localStorage
+            localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+            updateCheckoutButton();
+        }
+
+        // עדכון כפתור הקופה
+        function updateCheckoutButton() {
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const countElement = document.getElementById('selectedCount');
+            
+            if (selectedItems.length > 0) {
+                checkoutBtn.disabled = false;
+                countElement.textContent = selectedItems.length;
+                countElement.style.display = 'inline-block';
+            } else {
+                checkoutBtn.disabled = true;
+                countElement.style.display = 'none';
+            }
+        }
+
+        // חיפוש
+        document.getElementById('searchInput').addEventListener('input', displayItems);
+
+        // כפתורי סינון
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // הסרת active מכל הכפתורים
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                
+                // הוספת active לכפתור הנוכחי
+                this.classList.add('active');
+                
+                currentFilter = this.dataset.category;
+                displayItems();
+            });
+        });
+
+        // כפתור המשך לקופה
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            if (selectedItems.length > 0) {
+                window.location.href = 'checkout.html';
+            }
+        });
+
+        // אתחול
+        loadItems();
+        updateCheckoutButton();
+    </script>
+</body>
+</html>
