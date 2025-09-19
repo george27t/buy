@@ -3,37 +3,37 @@
     "id": 1,
     "name": "במבה מארז 40 גרם",
     "category": "חטיף",
-    "image": "https://asset.cloudinary.com/dlhfcdscf/a5e62844aba45ba7f70e213b5a9ff997"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278256/barcodes/%D7%9E%D7%90%D7%A8%D7%96_%D7%91%D7%9E%D7%91%D7%94_40_%D7%92%D7%A8%D7%9D_g1dzrm.png"
   },
   {
     "id": 2,
     "name": "קוקה קולה",
     "category": "שתיה",
-    "image": "https://asset.cloudinary.com/dlhfcdscf/96308f89fc8df4f31dd2e9d361e13019"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278261/barcodes/%D7%A7%D7%95%D7%A7%D7%94_%D7%A7%D7%95%D7%9C%D7%94_qxu4v8.png"
   },
   {
     "id": 3,
-    "name": "זירו קולה",
+    "name": "קולה זירו",
     "category": "שתיה",
-    "image": "https://asset.cloudinary.com/dlhfcdscf/c848c5ced1eae52ae12923fc542b5bac"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278257/barcodes/%D7%A7%D7%95%D7%9C%D7%94_%D7%96%D7%99%D7%A8%D7%95_s1lu3a.png"
   },
   {
     "id": 4,
     "name": "אגוזי",
     "category": "חטיף",
-    "image": "https://asset.cloudinary.com/dlhfcdscf/a5e62844aba45ba7f70e213b5a9ff997"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278262/barcodes/%D7%90%D7%92%D7%95%D7%96%D7%99_j35iaw.png"
   },
   {
     "id": 5,
     "name": "אקסל",
     "category": "שתיה",
-    "image": "https://asset.cloudinary.com/dlhfcdscf/f958774389ea004c9d0af994bd509cd5"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278262/barcodes/%D7%90%D7%A7%D7%A1%D7%9C_vv9ugg.png"
   },
   {
     "id": 6,
-    "name": "פנטה",
+    "name": "מים בטעם ענבים",
     "category": "שתיה",
-    "image": "https://res.cloudinary.com/demo/image/upload/fanta.png"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278257/barcodes/%D7%9E%D7%99%D7%9D_%D7%91%D7%98%D7%A2%D7%9D_%D7%A2%D7%A0%D7%91%D7%99%D7%9D_bllant.png"
   },
   {
     "id": 7,
@@ -55,8 +55,8 @@
   },
   {
     "id": 10,
-    "name": "מיץ תפוזים",
+    "name": "פיוז טי",
     "category": "שתיה",
-    "image": "https://res.cloudinary.com/demo/image/upload/orange_juice.png"
+    "image": "https://res.cloudinary.com/dlhfcdscf/image/upload/v1758278260/barcodes/%D7%A4%D7%99%D7%95%D7%96_%D7%98%D7%99_xhiglq.png"
   }
 ]
